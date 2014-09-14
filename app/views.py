@@ -35,7 +35,7 @@ def login():
 	form = LoginForm()
 	if form.validate_on_submit():
 		session['remember_me'] = form.remember_me.data
-		return oid.try_login(form.openid.data, ask_for = ['nickname', 'email'])
+		return oid.try_login(form.openid.data, ask_for = ['nickname', 'email', 'phone'])
 	return render_template('login.html',
 		title = 'Sign in',
 		form = form,
@@ -44,13 +44,15 @@ def login():
 @oid.after_login
 def after_login(resp):
 	if resp.email is None or resp.email == "":
+		flash(resp.nickname)
 		flash('Invalid login. Please try again.')
-		return redirect(url_for('login'))
+		return redirect(url_for('login'))	
 	user = User.query.filter_by(email = resp.email).first()
 	if user is None:
 		nickname = resp.nickname
 		if nickname is None or nickname == "":
 			nickname = resp.email.split('@')[0]
+		nickname = User.maker_unique_nickname(nickname)
 		user = User(nickname = nickname, email = resp.email, role = ROLE_USER)
 		db.session.add(user)
 		db.session.commit()
@@ -96,7 +98,7 @@ def user(nickname):
 @app.route('/edit', methods = ['GET', 'POST'])
 @login_required
 def edit():
-	form = EditForm()
+	form = EditForm(g.user.nickname)
 	if form.validate_on_submit():
 		g.user.nickname = form.nickname.data
 		g.user.about_me = form.about_me.data
@@ -108,3 +110,12 @@ def edit():
 		form.nickname.data = g.user.nickname
 		form.about_me.data = g.user.about_me
 	return render_template('edit.html', form = form)	
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_error(error):
+    db.session.rollback()
+    return render_template('500.html'), 500	
