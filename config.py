@@ -17,13 +17,15 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')    
 
 # mail server settings
-MAIL_SERVER = 'localhost'
+MAIL_SERVER = 'smtp.yandex.ru'
 MAIL_PORT = 25
-MAIL_USERNAME = None
-MAIL_PASSWORD = None
+MAIL_USE_TLS = True
+MAIL_USE_SSL = False
+MAIL_USERNAME = 'example@com.ua'
+MAIL_PASSWORD = 'qwerty'
 
 # administrator list
-ADMINS = ['you@example.com']
+ADMINS = ['example@com.ua']
 
 # pagination
 POSTS_PER_PAGE = 3
