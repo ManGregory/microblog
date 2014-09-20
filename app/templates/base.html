@@ -7,7 +7,14 @@
 	{% else %}
 	<title>microblog</title>
 	{% endif %}
-   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/2.2.2/css/bootstrap.min.css">   
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/2.2.2/css/bootstrap.min.css">     
+  <script src="/static/js/moment.js">   
+  </script> 
+  <script src="/static/js/moment-with-locales.min.js">
+  </script>  
+  <script>
+    moment.locale("ru");
+  </script>
 </head>
 <body>
     <div class="container">
@@ -40,6 +47,6 @@
       </div>
     </div>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/2.2.2/js/bootstrap.min.js"></script>
-	<script src="http://code.jquery.com/jquery-latest.js"></script>	
+	<script src="http://code.jquery.com/jquery-latest.js"></script>	  
 </body>
 </html>
