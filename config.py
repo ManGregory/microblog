@@ -39,3 +39,6 @@ LANGUAGES = {
 	'en' : 'English',
 	'ru' : 'Русский'
 }
+
+MS_TRANSLATOR_CLIENT_ID = None
+MS_TRANSLATOR_CLIENT_SECRET = None

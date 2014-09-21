@@ -57,3 +57,6 @@ docs/_build/
 
 #temp openid
 tmp
+
+# flask docs
+flask/docs
