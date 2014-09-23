@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-09-21 17:34+0300\n"
-"PO-Revision-Date: 2014-09-21 17:35+0300\n"
+"POT-Creation-Date: 2014-09-23 19:18+0300\n"
+"PO-Revision-Date: 2014-09-23 19:18+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "Pleas log in to access this page"
 msgstr "Пожалуйста войдите в систему для просмотра этой страницы"
 
-#: app/forms.py:25
+#: app/forms.py:26
 msgid "This nickname has invalid chars."
 msgstr "Имя пользователя содержит запрещенные символы."
 
-#: app/forms.py:29
+#: app/forms.py:30
 msgid "This nickname is already in user. Please choose another one"
 msgstr "Имя пользователя уже используется. Попробуйте выбрать другое"
 
@@ -44,60 +44,60 @@ msgstr "Ошибка: сервис-переводчик не сконфигур�
 msgid "Error: Unexpected error."
 msgstr "Произошла неизвестная ошибка"
 
-#: app/views.py:34
+#: app/views.py:42
 msgid "Your post is now live!"
 msgstr "Пост опубликован!"
 
-#: app/views.py:48
+#: app/views.py:56
 msgid "Post not found."
 msgstr "Пост не найден."
 
-#: app/views.py:51
+#: app/views.py:59
 msgid "You cannot delete this post."
 msgstr "Вы не можете удалить этот пост."
 
-#: app/views.py:55
+#: app/views.py:63
 #, fuzzy
 msgid "Your post has been deleted"
 msgstr "Пост опубликован!"
 
-#: app/views.py:76
+#: app/views.py:84
 msgid "Invalid login. Please try again."
 msgstr "Неправильный логин. Попробуйте еще раз."
 
-#: app/views.py:123 app/views.py:151 app/views.py:171
+#: app/views.py:132 app/views.py:162 app/views.py:182
 #, python-format
 msgid "User %(nickname)s not found."
 msgstr "Пользователь %(nickname)s не найден"
 
-#: app/views.py:139
+#: app/views.py:150
 msgid "Your changes have been saved."
 msgstr "Ваши изменения были сохранены"
 
-#: app/views.py:154
+#: app/views.py:165
 msgid "You can't followe yourself!"
 msgstr "Вы не можете подписаться на самого себя!"
 
-#: app/views.py:158
+#: app/views.py:169
 #, python-format
 msgid "Cannot follow %(nickname)s."
 msgstr "Невозможно подписаться на %(nickname)s."
 
-#: app/views.py:162
+#: app/views.py:173
 #, python-format
 msgid "You are now following %(nickname)s!"
 msgstr "Теперь вы подписаны на %(nickname)s!"
 
-#: app/views.py:174
+#: app/views.py:185
 msgid "You can't unfollow yourself!"
 msgstr "Вы не можете отказаться от подписки на самого себя!"
 
-#: app/views.py:178
+#: app/views.py:189
 #, python-format
 msgid "Cannot unfollow %(nickname)s."
 msgstr "Невозможно отписать от подписки на %(nickname)s."
 
-#: app/views.py:182
+#: app/views.py:193
 #, python-format
 msgid "You have stopped following %(nickname)s."
 msgstr "Вы отказались от подписки на %(nickname)s."
@@ -150,7 +150,11 @@ msgstr "Имя пользователя:"
 msgid "About yourself:"
 msgstr "О себе:"
 
-#: app/templates/edit.html:30
+#: app/templates/edit.html:29
+msgid "Choose your language:"
+msgstr "Выберите ваш язык:"
+
+#: app/templates/edit.html:39
 msgid "\"Save Changes\""
 msgstr "\"Сохранить изменения\""
 

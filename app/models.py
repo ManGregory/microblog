@@ -20,6 +20,7 @@ class User(db.Model):
 	posts = db.relationship('Post', backref = 'author', lazy = 'dynamic')
 	about_me = db.Column(db.String(140))
 	last_seen = db.Column(db.DateTime)
+	lang_id = db.Column(db.Integer, db.ForeignKey('language.id'))
 	followed = db.relationship('User',
 		secondary = followers,
 		primaryjoin = (followers.c.follower_id == id),
@@ -59,7 +60,7 @@ class User(db.Model):
 		return 'http://www.gravatar.com/avatar/' + md5(self.email).hexdigest() + '?d=mm&s=' + str(size)
 
 	def __repr__(self):
-		return '<User %r' % (self.nickname)	
+		return '<User %r>' % (self.nickname)	
 
 	def follow(self, user):
 		if not self.is_following(user):
@@ -88,6 +89,15 @@ class Post(db.Model):
 
 	def __repr__(self):
 		return '<Post %r>' % (self.body)
+
+class Language(db.Model):
+	id = db.Column(db.Integer, primary_key = True)
+	short_name = db.Column(db.String(5))
+	long_name = db.Column(db.String(15))		
+	users = db.relationship('User', backref = 'lang', lazy = 'dynamic')
+
+	def __repr__(self):
+		return '<Language %s - %s>' % (self.short_name, self.long_name)
 		
 if WHOOSH_ENABLED:
 	import flask.ext.whooshalchemy as whooshalchemy

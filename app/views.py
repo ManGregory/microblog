@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, session, url_for, request, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
 from app import app, db, lm, oid
 from forms import LoginForm, EditForm, PostForm, SearchForm
-from models import User, ROLE_USER, ROLE_ADMIN, Post
+from models import User, ROLE_USER, ROLE_ADMIN, Post, Language
 from datetime import datetime
 from config import POSTS_PER_PAGE, MAX_SEARCH_RESULTS, WHOOSH_ENABLED
 from emails import follower_notification
@@ -15,7 +15,21 @@ from translate import microsoft_translate
 
 @babel.localeselector
 def get_locale():
-	return "ru" #request.accept_languages.best_match(LANGUAGES.keys())
+	if (g.user is not None) and (not g.user.is_anonymous()):
+		if g.user.lang_id is not None:
+			app.logger.info(g.user.lang.short_name)
+			return g.user.lang.short_name
+		else:
+			accept_lang = request.accept_languages.best_match(LANGUAGES.keys())
+			if accept_lang is None or (accept_lang == ''):
+				accept_lang = 'en'			
+			g.user.lang = Language.query.filter_by(short_name = accept_lang).first()
+			db.session.add(g.user)
+			db.session.commit()
+			return g.user.lang.short_name
+	else:
+		return request.accept_languages.best_match(LANGUAGES.keys())
+			 
 
 @app.route('/', methods = ['GET', 'POST'])
 @app.route('/index', methods = ['GET', 'POST'])
@@ -131,10 +145,12 @@ def user(nickname, page = 1):
 @app.route('/edit', methods = ['GET', 'POST'])
 @login_required
 def edit():
-	form = EditForm(g.user.nickname)
+	form = EditForm(g.user.nickname, language = g.user.lang.id)
+	form.language.choices = [(l.id, l.long_name) for l in Language.query.order_by('long_name')]
 	if form.validate_on_submit():
 		g.user.nickname = form.nickname.data
 		g.user.about_me = form.about_me.data
+		g.user.lang_id = form.language.data
 		db.session.add(g.user)
 		db.session.commit()
 		flash(gettext('Your changes have been saved.'))

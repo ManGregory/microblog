@@ -1,5 +1,5 @@
 from flask.ext.wtf import Form
-from wtforms import TextField, BooleanField, TextAreaField
+from wtforms import TextField, BooleanField, TextAreaField, SelectField
 from wtforms.validators import Required, Length
 from models import User
 from flask.ext.babel import gettext
@@ -11,6 +11,7 @@ class LoginForm(Form):
 class EditForm(Form):
 	nickname = TextField('nickname', validators=[Required()])
 	about_me = TextAreaField('about_me', validators=[Length(min = 0, max = 140)])	
+	language = SelectField(u'language', coerce=int)
 
 	def __init__(self, original_nickname, *args, **kwargs):
 		Form.__init__(self, *args, **kwargs)

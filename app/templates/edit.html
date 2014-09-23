@@ -25,6 +25,15 @@
                 {% endfor %}
             </div>
         </div>
+        <div class="control-group{% if form.errors.post %} error{% endif %}">
+            <label class="control-label" for="lang">{{_('Choose your language:')}}</label>
+            <div class="controls">
+                {{ form.language }}
+                {% for error in form.errors.lang %}
+                    <span class="help-inline">[{{error}}]</span><br>
+                {% endfor %}
+            </div>
+        </div>        
         <div class="control-group">
             <div class="controls">
                 <input class="btn btn-primary" type="submit" value={{_('"Save Changes"')}}>
