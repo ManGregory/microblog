@@ -1,0 +1,255 @@
+# Ukrainian translations for PROJECT.
+# Copyright (C) 2014 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2014-09-24 19:16+0300\n"
+"PO-Revision-Date: 2014-09-24 19:31+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: uk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: app/__init__.py:17
+msgid "Pleas log in to access this page"
+msgstr "Будь ласка зареєструйтесь для перегляду цієї сторінки"
+
+#: app/forms.py:26
+msgid "This nickname has invalid chars."
+msgstr "Ім'я користувача включає заборонені символи"
+
+#: app/forms.py:30
+msgid "This nickname is already in user. Please choose another one"
+msgstr "Це ім'я вже використовується. Будь ласка оберіть інше"
+
+#: app/translate.py:9
+msgid "Error: translation service not configured."
+msgstr "Помилка: сервіс перекладу не налаштований"
+
+#: app/translate.py:40
+msgid "Error: translation service not available."
+msgstr "Помилка: сервіс перекладу недоступний"
+
+#: app/translate.py:56
+msgid "Error: Unexpected error."
+msgstr "Помилка: Неочікувана помилка"
+
+#: app/views.py:48
+msgid "Your post is now live!"
+msgstr "Ваш пост опубліковано!"
+
+#: app/views.py:62
+msgid "Post not found."
+msgstr "Пост не знайдено."
+
+#: app/views.py:65
+msgid "You cannot delete this post."
+msgstr "Ві не можете видалити цей пост."
+
+#: app/views.py:69
+msgid "Your post has been deleted"
+msgstr "Ваш пост було видалено"
+
+#: app/views.py:90
+msgid "Invalid login. Please try again."
+msgstr "Невірний логін. Будь ласка спробуйте ще."
+
+#: app/views.py:138 app/views.py:168 app/views.py:188
+#, python-format
+msgid "User %(nickname)s not found."
+msgstr "Користувача %(nickname)s не знайдено."
+
+#: app/views.py:156
+msgid "Your changes have been saved."
+msgstr "Зміни було збережено."
+
+#: app/views.py:171
+msgid "You can't followe yourself!"
+msgstr "Ви не можете підписатся на самого себе!"
+
+#: app/views.py:175
+#, python-format
+msgid "Cannot follow %(nickname)s."
+msgstr "Неможливо підписатися на %(nickname)s."
+
+#: app/views.py:179
+#, python-format
+msgid "You are now following %(nickname)s!"
+msgstr "Ви підписалися на %(nickname)s!"
+
+#: app/views.py:191
+msgid "You can't unfollow yourself!"
+msgstr "Ви не можете відписатися від самого себе!"
+
+#: app/views.py:195
+#, python-format
+msgid "Cannot unfollow %(nickname)s."
+msgstr "Неможливо відписатися від %(nickname)s."
+
+#: app/views.py:199
+#, python-format
+msgid "You have stopped following %(nickname)s."
+msgstr "Ви відписалися від %(nickname)s."
+
+#: app/templates/404.html:4
+msgid "File Not Found"
+msgstr "Файл не знайдено"
+
+#: app/templates/404.html:5 app/templates/500.html:6
+msgid "Back"
+msgstr "Назад"
+
+#: app/templates/500.html:4
+msgid "An unexpected error has occured"
+msgstr "Відбулася помилка"
+
+#: app/templates/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience"
+msgstr "Адміністратор вже знає. Вибачте за незручність"
+
+#: app/templates/base.html:31
+msgid "Error: Could not contact server."
+msgstr "Помилка: Неможливо підключитися до сервера."
+
+#: app/templates/base.html:49
+msgid "Home"
+msgstr "Головна"
+
+#: app/templates/base.html:51
+msgid "Your Profile"
+msgstr "Ваш профіль"
+
+#: app/templates/base.html:52
+msgid "Logout"
+msgstr "Вийти"
+
+#: app/templates/base.html:57
+msgid "Search"
+msgstr "Знайти"
+
+#: app/templates/edit.html:5
+msgid "Edit Your Profile"
+msgstr "Змінити профіль"
+
+#: app/templates/edit.html:11
+msgid "Your nickname:"
+msgstr "Ваш нік:"
+
+#: app/templates/edit.html:20
+msgid "About yourself:"
+msgstr "Про себе:"
+
+#: app/templates/edit.html:29
+msgid "Choose your language:"
+msgstr "Виберіть свою мову:"
+
+#: app/templates/edit.html:39
+msgid "\"Save Changes\""
+msgstr "\"Зберегти зміни\""
+
+#: app/templates/follower_email.html:2
+#, python-format
+msgid "%(nickname)s is now a follower."
+msgstr "%(nickname)s підписався на вас."
+
+#: app/templates/follower_email.html:10
+msgid "Regards,"
+msgstr "З повагою,"
+
+#: app/templates/follower_email.html:11
+msgid "The <code>microblog</code> admin"
+msgstr "<code>microblog</code> admin"
+
+#: app/templates/index.html:5
+#, python-format
+msgid "Hi, %(nickname)s!"
+msgstr "Здоровеньки були, %(nickname)s!"
+
+#: app/templates/index.html:11
+msgid "Say something:"
+msgstr "Скажи що-небудь:"
+
+#: app/templates/index.html:21
+msgid "Post!"
+msgstr "Пост!"
+
+#: app/templates/index.html:31 app/templates/index.html:33
+#: app/templates/user.html:29 app/templates/user.html:31
+msgid "Newer posts"
+msgstr "Нові пости"
+
+#: app/templates/index.html:36 app/templates/index.html:38
+#: app/templates/user.html:34 app/templates/user.html:36
+msgid "Older posts"
+msgstr "Старі пости"
+
+#: app/templates/login.html:19
+msgid "Please Sign In"
+msgstr "Будь ласка увійдіть"
+
+#: app/templates/login.html:22
+msgid "Click on your OpenID provider below:"
+msgstr "Виберіть вашого провайдера OpenID нижче:"
+
+#: app/templates/login.html:29
+msgid "Or enter your OpenID here:"
+msgstr "Або введіть свій OpenID тут:"
+
+#: app/templates/login.html:40
+msgid "Remember Me"
+msgstr "Запамятати мене"
+
+#: app/templates/login.html:46
+msgid "Sign In"
+msgstr "Увійти"
+
+#: app/templates/post.html:6
+#, python-format
+msgid "%(nickname)s said %(when)s:"
+msgstr "%(nickname)s сказав %(when)s:"
+
+#: app/templates/post.html:12
+msgid "Translate"
+msgstr "Перекласти"
+
+#: app/templates/post.html:18
+msgid "Delete"
+msgstr "Видалити"
+
+#: app/templates/search_results.html:4
+#, python-format
+msgid "Search results for \"%(query)s\":"
+msgstr "Результати пошуку \"%(query)s\":"
+
+#: app/templates/user.html:12
+msgid "Last seen:"
+msgstr "В останнє був:"
+
+#: app/templates/user.html:14
+msgid "Followers:"
+msgstr "Підпісалися:"
+
+#: app/templates/user.html:14
+msgid "Following:"
+msgstr "Підписався:"
+
+#: app/templates/user.html:16
+msgid "Edit your profile"
+msgstr "Змінити профіль"
+
+#: app/templates/user.html:18
+msgid "Follow"
+msgstr "Підписатися"
+
+#: app/templates/user.html:20
+msgid "Unfollow"
+msgstr "Відписатися"

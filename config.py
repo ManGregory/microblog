@@ -41,7 +41,8 @@ MAX_SEARCH_RESULTS = 50
 
 LANGUAGES = {
 	'en' : 'English',
-	'ru' : 'Русский'
+	'ru' : 'Русский',
+    'uk' : 'Українська'
 }
 
 MS_TRANSLATOR_CLIENT_ID = None
